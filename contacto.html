@@ -18,10 +18,10 @@
       <a href="precios.html">Precios</a>
       <a href="sobre.html">Sobre nosotros</a>
       <a href="contacto.html" class="active">Contacto</a>
-      <a href="https://app.licita.lagrafica.ai/buscador">Buscador</a>
+      <a href="https://app.lalicita.ai/buscador">Buscador</a>
     </nav>
     <div class="nav-cta">
-      <a href="https://app.licita.lagrafica.ai/" class="btn btn-ghost">Iniciar sesión</a>
+      <a href="https://app.lalicita.ai/" class="btn btn-ghost">Iniciar sesión</a>
       <a href="#form" class="btn btn-primary">Solicitar demo</a>
     </div>
   </div>
@@ -68,7 +68,7 @@
         </label>
         <button type="submit" class="btn btn-primary btn-lg" id="submitBtn" style="width:100%;justify-content:center">Enviar solicitud</button>
         <p id="formMsg" style="font-size:13px;margin-top:14px;text-align:center;display:none"></p>
-        <p style="font-size:12.5px;color:var(--slate);margin-top:10px;text-align:center">También puedes escribirnos directamente a <b>licita@lagrafica.com</b>.</p>
+        <p style="font-size:12.5px;color:var(--slate);margin-top:10px;text-align:center">También puedes escribirnos directamente a <b>lalicita@lagrafica.com</b>.</p>
       </form>
     </div>
 
@@ -83,8 +83,8 @@
         <li style="padding:8px 0 8px 26px;position:relative"><span style="position:absolute;left:0;color:var(--orange);font-weight:800">✓</span> El plan que mejor encaja contigo</li>
       </ul>
       <h3>Contacto directo</h3>
-      <p>Email: <a href="mailto:licita@lagrafica.com" style="color:var(--orange);font-weight:600">licita@lagrafica.com</a><br>
-      App: <a href="https://app.licita.lagrafica.ai/" style="color:var(--orange);font-weight:600">app.licita.lagrafica.ai</a></p>
+      <p>Email: <a href="mailto:lalicita@lagrafica.com" style="color:var(--orange);font-weight:600">lalicita@lagrafica.com</a><br>
+      App: <a href="https://app.lalicita.ai/" style="color:var(--orange);font-weight:600">app.lalicita.ai</a></p>
       <div style="margin-top:24px;padding:18px;background:var(--orange-soft);border-radius:12px;font-size:14.5px;color:var(--ink)">
         <b>Sin permanencia · 7 días de prueba.</b> Pruébalo con tus propias licitaciones antes de decidir.
       </div>
@@ -101,7 +101,7 @@
       </div>
       <div class="foot-links">
         <div class="foot-col"><b>Producto</b><a href="producto.html">Funcionalidades</a><a href="index.html#como">Cómo funciona</a><a href="precios.html">Precios</a></div>
-        <div class="foot-col"><b>Empresa</b><a href="sobre.html">Sobre nosotros</a><a href="contacto.html">Contacto</a><a href="privacidad.html">Privacidad</a><a href="https://app.licita.lagrafica.ai/">Iniciar sesión</a></div>
+        <div class="foot-col"><b>Empresa</b><a href="sobre.html">Sobre nosotros</a><a href="contacto.html">Contacto</a><a href="privacidad.html">Privacidad</a><a href="https://app.lalicita.ai/">Iniciar sesión</a></div>
         <div class="foot-col"><b>Fuentes</b><a href="https://contrataciondelestado.es">PLACSP</a><a href="https://contractaciopublica.cat">Contractació Pública</a><a href="https://boe.es">BOE</a></div>
       </div>
     </div>
@@ -127,7 +127,7 @@
     };
     function show(text, color){ msgEl.textContent = text; msgEl.style.color = color; msgEl.style.display = 'block'; }
     btn.disabled = true; btn.textContent = 'Enviando…';
-    fetch('https://app.licita.lagrafica.ai/api/contacto', {
+    fetch('https://app.lalicita.ai/api/contacto', {
       method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(payload)
     })
     .then(function(r){ return r.json(); })
@@ -141,7 +141,7 @@
       btn.disabled = false; btn.textContent = 'Enviar solicitud';
     })
     .catch(function(){
-      show('Error de conexión. Escríbenos a licita@lagrafica.com.', '#DC2626');
+      show('Error de conexión. Escríbenos a lalicita@lagrafica.com.', '#DC2626');
       btn.disabled = false; btn.textContent = 'Enviar solicitud';
     });
   });

@@ -18,10 +18,10 @@
       <a href="precios.html">Precios</a>
       <a href="sobre.html">Sobre nosotros</a>
       <a href="contacto.html">Contacto</a>
-      <a href="https://app.licita.lagrafica.ai/buscador">Buscador</a>
+      <a href="https://app.lalicita.ai/buscador">Buscador</a>
     </nav>
     <div class="nav-cta">
-      <a href="https://app.licita.lagrafica.ai/" class="btn btn-ghost">Iniciar sesión</a>
+      <a href="https://app.lalicita.ai/" class="btn btn-ghost">Iniciar sesión</a>
       <a href="contacto.html" class="btn btn-primary">Solicitar demo</a>
     </div>
   </div>
@@ -47,7 +47,7 @@
     <div class="mock" aria-hidden="true">
       <div class="mock-bar">
         <span class="d"></span><span class="d"></span><span class="d"></span>
-        <span class="url">app.licita.lagrafica.ai</span>
+        <span class="url">app.lalicita.ai</span>
       </div>
       <div class="mock-body">
         <div class="mock-head">
@@ -166,7 +166,7 @@
     <h2>Empieza a ganar más concursos</h2>
     <p>Solicita una demo gratuita y te enseñamos cómo Licita.AI puede ahorrarte horas en cada licitación. Sin compromiso.</p>
     <a href="contacto.html" class="btn btn-primary btn-lg">Solicitar demo gratuita</a>
-    <div class="mini">o escríbenos en el <b><a href="#" onclick="cwOpen();return false;" style="color:inherit;text-decoration:underline">chat</a></b> o a <b>licita@lagrafica.com</b></div>
+    <div class="mini">o escríbenos en el <b><a href="#" onclick="cwOpen();return false;" style="color:inherit;text-decoration:underline">chat</a></b> o a <b>lalicita@lagrafica.com</b></div>
   </div>
 </section>
 
@@ -180,7 +180,7 @@
       </div>
       <div class="foot-links">
         <div class="foot-col"><b>Producto</b><a href="producto.html">Funcionalidades</a><a href="index.html#como">Cómo funciona</a><a href="precios.html">Precios</a></div>
-        <div class="foot-col"><b>Empresa</b><a href="sobre.html">Sobre nosotros</a><a href="contacto.html">Contacto</a><a href="privacidad.html">Privacidad</a><a href="https://app.licita.lagrafica.ai/">Iniciar sesión</a></div>
+        <div class="foot-col"><b>Empresa</b><a href="sobre.html">Sobre nosotros</a><a href="contacto.html">Contacto</a><a href="privacidad.html">Privacidad</a><a href="https://app.lalicita.ai/">Iniciar sesión</a></div>
         <div class="foot-col"><b>Fuentes</b><a href="https://contrataciondelestado.es">PLACSP</a><a href="https://contractaciopublica.cat">Contractació Pública</a><a href="https://boe.es">BOE</a></div>
       </div>
     </div>
@@ -224,14 +224,14 @@
         sector: 'Chat web'
       };
       btn.disabled = true; btn.textContent = 'Enviando…';
-      fetch('https://app.licita.lagrafica.ai/api/contacto', {
+      fetch('https://app.lalicita.ai/api/contacto', {
         method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)
       }).then(function(r){return r.json();}).then(function(d){
         if(d && d.ok){ f.reset(); msg.style.color='#1faa59'; msg.textContent='✓ ¡Recibido! Te contactamos enseguida.'; }
         else { msg.style.color='#DC2626'; msg.textContent=(d&&d.error)||'No se pudo enviar.'; }
         btn.disabled=false; btn.textContent='Enviar';
       }).catch(function(){
-        msg.style.color='#DC2626'; msg.textContent='Error. Escríbenos a licita@lagrafica.com';
+        msg.style.color='#DC2626'; msg.textContent='Error. Escríbenos a lalicita@lagrafica.com';
         btn.disabled=false; btn.textContent='Enviar';
       });
     });
