@@ -62,8 +62,9 @@
           </select>
         </div>
         <div class="form-row"><label for="mensaje">¿Qué te gustaría ver?</label><textarea id="mensaje" name="mensaje" placeholder="Cuéntanos a qué tipo de licitaciones os presentáis…"></textarea></div>
-        <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center">Enviar solicitud</button>
-        <p style="font-size:12.5px;color:var(--slate);margin-top:14px;text-align:center">Al enviar se abrirá tu correo con los datos listos para mandarnos. También puedes escribirnos directamente a <b>lagraficacreative@gmail.com</b>.</p>
+        <button type="submit" class="btn btn-primary btn-lg" id="submitBtn" style="width:100%;justify-content:center">Enviar solicitud</button>
+        <p id="formMsg" style="font-size:13px;margin-top:14px;text-align:center;display:none"></p>
+        <p style="font-size:12.5px;color:var(--slate);margin-top:10px;text-align:center">También puedes escribirnos directamente a <b>licita@lagrafica.com</b>.</p>
       </form>
     </div>
 
@@ -78,10 +79,10 @@
         <li style="padding:8px 0 8px 26px;position:relative"><span style="position:absolute;left:0;color:var(--orange);font-weight:800">✓</span> El plan que mejor encaja contigo</li>
       </ul>
       <h3>Contacto directo</h3>
-      <p>Email: <a href="mailto:lagraficacreative@gmail.com" style="color:var(--orange);font-weight:600">lagraficacreative@gmail.com</a><br>
+      <p>Email: <a href="mailto:licita@lagrafica.com" style="color:var(--orange);font-weight:600">licita@lagrafica.com</a><br>
       App: <a href="https://app.licita.lagrafica.ai/" style="color:var(--orange);font-weight:600">app.licita.lagrafica.ai</a></p>
       <div style="margin-top:24px;padding:18px;background:var(--orange-soft);border-radius:12px;font-size:14.5px;color:var(--ink)">
-        <b>Sin permanencia · 14 días de prueba.</b> Pruébalo con tus propias licitaciones antes de decidir.
+        <b>Sin permanencia · 7 días de prueba.</b> Pruébalo con tus propias licitaciones antes de decidir.
       </div>
     </div>
   </div>
@@ -110,14 +111,35 @@
 <script>
   document.getElementById('demoForm').addEventListener('submit', function(e){
     e.preventDefault();
-    var n = encodeURIComponent(document.getElementById('nombre').value);
-    var emp = encodeURIComponent(document.getElementById('empresa').value);
-    var em = encodeURIComponent(document.getElementById('email').value);
-    var tel = encodeURIComponent(document.getElementById('telefono').value);
-    var sec = encodeURIComponent(document.getElementById('sector').value);
-    var msg = encodeURIComponent(document.getElementById('mensaje').value);
-    var body = "Nombre: "+n+"%0D%0AEmpresa: "+emp+"%0D%0AEmail: "+em+"%0D%0ATeléfono: "+tel+"%0D%0ASector: "+sec+"%0D%0A%0D%0AMensaje:%0D%0A"+msg;
-    window.location.href = "mailto:lagraficacreative@gmail.com?subject=Solicitud%20de%20demo%20Licita.AI&body="+body;
+    var btn = document.getElementById('submitBtn');
+    var msgEl = document.getElementById('formMsg');
+    var payload = {
+      nombre:   document.getElementById('nombre').value.trim(),
+      empresa:  document.getElementById('empresa').value.trim(),
+      email:    document.getElementById('email').value.trim(),
+      telefono: document.getElementById('telefono').value.trim(),
+      sector:   document.getElementById('sector').value,
+      mensaje:  document.getElementById('mensaje').value.trim()
+    };
+    function show(text, color){ msgEl.textContent = text; msgEl.style.color = color; msgEl.style.display = 'block'; }
+    btn.disabled = true; btn.textContent = 'Enviando…';
+    fetch('https://app.licita.lagrafica.ai/api/contacto', {
+      method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(payload)
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if (d && d.ok) {
+        document.getElementById('demoForm').reset();
+        show('✓ ¡Solicitud enviada! Te contactaremos muy pronto.', '#1faa59');
+      } else {
+        show((d && d.error) || 'No se pudo enviar. Revisa los datos e inténtalo de nuevo.', '#DC2626');
+      }
+      btn.disabled = false; btn.textContent = 'Enviar solicitud';
+    })
+    .catch(function(){
+      show('Error de conexión. Escríbenos a licita@lagrafica.com.', '#DC2626');
+      btn.disabled = false; btn.textContent = 'Enviar solicitud';
+    });
   });
 </script>
 
