@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Licita.AI — Encuentra, analiza y gana más licitaciones públicas</title>
 <meta name="description" content="Licita.AI es el copiloto con IA para empresas que licitan: encuentra licitaciones, analiza pliegos, calcula dónde se ganan puntos y redacta tus memorias técnicas y DEUC.">
+<link rel="canonical" href="https://lalicita.ai/">
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Licita.AI">
+<meta property="og:title" content="Licita.AI — Encuentra, analiza y gana más licitaciones públicas">
+<meta property="og:description" content="El copiloto con IA para licitar: encuentra licitaciones, analiza pliegos, calcula dónde se ganan puntos y redacta tus memorias técnicas. 7 días de prueba sin tarjeta.">
+<meta property="og:url" content="https://lalicita.ai/">
+<meta property="og:image" content="https://lalicita.ai/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Licita.AI — Encuentra, analiza y gana más licitaciones públicas">
+<meta name="twitter:description" content="El copiloto con IA para licitar. 7 días de prueba sin tarjeta.">
+<meta name="twitter:image" content="https://lalicita.ai/og-image.png">
 <link rel="stylesheet" href="styles.css">
 <script src="nav.js" defer></script>
 </head>
@@ -23,7 +35,7 @@
     </nav>
     <div class="nav-cta">
       <a href="https://app.lalicita.ai/" class="btn btn-ghost">Iniciar sesión</a>
-      <a href="contacto.html" class="btn btn-primary">Solicitar demo</a>
+      <a href="https://app.lalicita.ai/registre.html" class="btn btn-primary">Empezar gratis</a>
     </div>
   </div>
 </header>
@@ -36,10 +48,12 @@
       <h1>Encuentra, analiza y <span class="hl" style="color:#2b2b30">gana</span> más licitaciones públicas</h1>
       <p class="lead">Licita.AI reúne todas las licitaciones que te interesan, analiza los pliegos con inteligencia artificial, te dice <b>dónde se ganan más puntos</b> y redacta tus memorias técnicas y documentación administrativa. Menos horas perdidas, más concursos ganados.</p>
       <div class="hero-cta">
-        <a href="contacto.html" class="btn btn-primary btn-lg">Solicitar una demo gratuita</a>
-        <a href="producto.html" class="btn btn-ghost btn-lg">Ver el producto</a>
+        <a href="https://app.lalicita.ai/registre.html" class="btn btn-primary btn-lg">Empezar gratis</a>
+        <a href="https://app.lalicita.ai/buscador" class="btn btn-ghost btn-lg">Probar el buscador gratis</a>
       </div>
+      <div style="margin-top:14px;font-size:14px;color:rgba(255,255,255,.85)">7 días de prueba, sin tarjeta. ¿Prefieres que te lo enseñemos? <a href="contacto.html" style="color:#fff;font-weight:700;text-decoration:underline">Solicita una demo</a>.</div>
       <div class="hero-trust">
+        <span id="liveCount" style="opacity:0;transition:opacity .4s">✓ <b>—</b> licitaciones abiertas ahora</span>
         <span>✓ <b>Sin permanencia</b></span>
         <span>✓ <b>7 días</b> de prueba</span>
         <span>✓ Datos de <b>PLACSP</b> y autonomías</span>
@@ -175,7 +189,7 @@
     </div>
     <div class="foot-bottom">
       <span>© 2026 Licita.AI · LAGRÀFICA CREATIVE EXPERIENCE S.L. · B25826603 · Manuel Gaià i Tomàs, 11 baixos · 25001 Lleida</span>
-      <span>Hecho con tecnología de IA</span>
+      <span>Datos oficiales de PLACSP y plataformas autonómicas</span>
     </div>
   </div>
 </footer>
@@ -224,6 +238,17 @@
         btn.disabled=false; btn.textContent='Enviar';
       });
     });
+  })();
+  // Contador en vivo de licitaciones abiertas (desde el buscador público)
+  (function(){
+    var el = document.getElementById('liveCount');
+    if(!el) return;
+    fetch('https://app.lalicita.ai/api/buscar?abiertas=1&page_size=1')
+      .then(function(r){return r.json();})
+      .then(function(d){
+        var n = d && (d.total!=null ? d.total : (d.count!=null ? d.count : null));
+        if(n!=null && n>0){ el.querySelector('b').textContent = Number(n).toLocaleString('es-ES'); el.style.opacity='1'; }
+      }).catch(function(){});
   })();
 </script>
 
