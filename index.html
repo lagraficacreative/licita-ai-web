@@ -42,55 +42,29 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow">El copiloto de licitaciones públicas</span>
-      <h1>Encuentra, analiza y <span class="hl" style="color:#2b2b30">gana</span> más licitaciones públicas</h1>
-      <p class="lead">Licita.AI reúne todas las licitaciones que te interesan, analiza los pliegos con inteligencia artificial, te dice <b>dónde se ganan más puntos</b> y redacta tus memorias técnicas y documentación administrativa. Menos horas perdidas, más concursos ganados.</p>
-      <!-- Buscar con IA -->
-      <div style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:14px;padding:14px;margin:22px 0 4px;max-width:560px">
-        <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:9px">🤖 Búsqueda con IA — descríbelo y te llena el buscador</div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap">
-          <input id="heroAi" type="text" placeholder="Ej.: diseño gráfico y campañas para ayuntamientos" style="flex:1 1 260px;min-width:0;border:0;outline:0;border-radius:10px;padding:13px 14px;font-size:15px;font-family:inherit;color:#23293a">
-          <button type="button" onclick="goHeroAi()" style="background:#fff;color:var(--orange);border:0;border-radius:10px;padding:13px 22px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;white-space:nowrap">✨ Buscar con IA</button>
-        </div>
-        <div style="font-size:12.5px;color:rgba(255,255,255,.9);margin-top:9px">🔒 <b>Suscríbete para probarlo</b> — la búsqueda inteligente es para usuarios registrados. <a href="https://app.lalicita.ai/registre.html" style="color:#fff;font-weight:700;text-decoration:underline">Empieza gratis (7 días) →</a></div>
+  <div class="wrap" style="max-width:860px;margin:0 auto;text-align:center">
+    <span class="eyebrow">El copiloto de licitaciones públicas</span>
+    <h1>Encuentra, analiza y <span class="hl" style="color:#2b2b30">gana</span> más licitaciones públicas</h1>
+    <p class="lead" style="margin:18px auto 0">Licita.AI reúne todas las licitaciones que te interesan, analiza los pliegos con inteligencia artificial, te dice <b>dónde se ganan más puntos</b> y redacta tus memorias técnicas. Menos horas perdidas, más concursos ganados.</p>
+    <!-- Buscar con IA — grande y centrado -->
+    <div style="background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.32);border-radius:18px;padding:22px;margin:28px auto 8px;max-width:660px">
+      <div style="font-size:16px;font-weight:800;color:#fff;margin-bottom:14px">🤖 Búsqueda con IA — descríbelo y te llena el buscador</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <input id="heroAi" type="text" placeholder="Ej.: diseño gráfico y campañas para ayuntamientos" style="flex:1 1 300px;min-width:0;border:0;outline:0;border-radius:12px;padding:16px 18px;font-size:17px;font-family:inherit;color:#23293a">
+        <button type="button" onclick="goHeroAi()" style="background:#fff;color:var(--orange);border:0;border-radius:12px;padding:16px 28px;font-weight:800;font-size:17px;cursor:pointer;font-family:inherit;white-space:nowrap">✨ Buscar con IA</button>
       </div>
-      <div class="hero-cta">
-        <a href="https://app.lalicita.ai/registre.html" class="btn btn-primary btn-lg">Empezar gratis</a>
-        <a href="https://app.lalicita.ai/buscador" class="btn btn-ghost btn-lg">Probar el buscador gratis</a>
-      </div>
-      <div style="margin-top:14px;font-size:14px;color:rgba(255,255,255,.85)">7 días de prueba, sin tarjeta. ¿Prefieres que te lo enseñemos? <a href="contacto.html" style="color:#fff;font-weight:700;text-decoration:underline">Solicita una demo</a>.</div>
-      <div class="hero-trust">
-        <span id="liveCount" style="opacity:0;transition:opacity .4s">✓ <b>—</b> licitaciones abiertas ahora</span>
-        <span>✓ <b>Sin permanencia</b></span>
-        <span>✓ <b>7 días</b> de prueba</span>
-        <span>✓ Datos de <b>PLACSP</b> y autonomías</span>
-      </div>
+      <div style="font-size:13.5px;color:rgba(255,255,255,.92);margin-top:13px">🔒 <b>Suscríbete para probarlo</b> — la búsqueda inteligente es para usuarios registrados. <a href="https://app.lalicita.ai/registre.html" style="color:#fff;font-weight:700;text-decoration:underline">Empieza gratis (7 días) →</a></div>
     </div>
-    <div class="mock" aria-hidden="true">
-      <div class="mock-bar">
-        <span class="d"></span><span class="d"></span><span class="d"></span>
-        <span class="url">app.lalicita.ai</span>
-      </div>
-      <div class="mock-body">
-        <div class="mock-head">
-          <span class="mock-title">⚡ Licitaciones abiertas</span>
-          <span class="pill-live">Backend conectado</span>
-        </div>
-        <div class="row">
-          <div><div class="t">Servicio de diseño e identidad visual</div><div class="o">Ajuntament de Barcelona · Cataluña</div><div style="margin-top:6px"><span class="tag tag-o">disseny gràfic</span><span class="tag tag-b">contractació</span></div></div>
-          <div style="text-align:right"><span class="days red">3 días</span><div class="o" style="margin-top:6px">45.000 €</div></div>
-        </div>
-        <div class="row">
-          <div><div class="t">Campaña de comunicación institucional</div><div class="o">Generalitat · Cataluña</div><div style="margin-top:6px"><span class="tag tag-o">comunicació</span><span class="tag tag-b">PLACSP</span></div></div>
-          <div style="text-align:right"><span class="days amber">7 días</span><div class="o" style="margin-top:6px">120.000 €</div></div>
-        </div>
-        <div class="row" style="background:var(--orange-soft);border-color:#f3d6c8">
-          <div><div class="t">🤖 Especialista LicitAI</div><div class="o">Análisis de pliego · estrategia · memoria técnica</div></div>
-          <div style="text-align:right"><span class="tag tag-o" style="font-size:11px">Listo ✓</span></div>
-        </div>
-      </div>
+    <div class="hero-cta" style="justify-content:center">
+      <a href="https://app.lalicita.ai/registre.html" class="btn btn-primary btn-lg">Empezar gratis</a>
+      <a href="https://app.lalicita.ai/buscador" class="btn btn-ghost btn-lg">Probar el buscador gratis</a>
+    </div>
+    <div style="margin-top:14px;font-size:14px;color:rgba(255,255,255,.85)">7 días de prueba, sin tarjeta. ¿Prefieres que te lo enseñemos? <a href="contacto.html" style="color:#fff;font-weight:700;text-decoration:underline">Solicita una demo</a>.</div>
+    <div class="hero-trust" style="justify-content:center">
+      <span id="liveCount" style="opacity:0;transition:opacity .4s">✓ <b>—</b> licitaciones abiertas ahora</span>
+      <span>✓ <b>Sin permanencia</b></span>
+      <span>✓ <b>7 días</b> de prueba</span>
+      <span>✓ Datos de <b>PLACSP</b> y autonomías</span>
     </div>
   </div>
 </section>
