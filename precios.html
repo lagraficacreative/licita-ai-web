@@ -39,18 +39,18 @@
 <section style="padding-top:40px">
   <div class="wrap">
     <div class="billing-toggle" style="display:flex;justify-content:center;align-items:center;gap:14px;margin:0 0 30px">
-      <span id="lblMensual" style="font-weight:700;color:var(--orange)">Mensual</span>
-      <button id="billingSwitch" type="button" role="switch" aria-checked="false" aria-label="Cambiar facturación" style="width:54px;height:30px;border-radius:999px;border:none;background:#d8dbe4;position:relative;cursor:pointer;padding:0;transition:.18s">
-        <span id="billingKnob" style="position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;transition:.18s;box-shadow:0 1px 3px rgba(0,0,0,.25)"></span>
+      <span id="lblMensual" style="font-weight:700;color:var(--slate)">Mensual</span>
+      <button id="billingSwitch" type="button" role="switch" aria-checked="true" aria-label="Cambiar facturación" style="width:54px;height:30px;border-radius:999px;border:none;background:#E8622A;position:relative;cursor:pointer;padding:0;transition:.18s">
+        <span id="billingKnob" style="position:absolute;top:3px;left:27px;width:24px;height:24px;border-radius:50%;background:#fff;transition:.18s;box-shadow:0 1px 3px rgba(0,0,0,.25)"></span>
       </button>
-      <span id="lblAnual" style="font-weight:700;color:var(--slate)">Anual <span style="background:var(--orange-soft);color:var(--orange);font-size:12px;padding:2px 9px;border-radius:999px;font-weight:700;white-space:nowrap">ahorra 2 meses</span></span>
+      <span id="lblAnual" style="font-weight:700;color:var(--orange)">Anual <span style="background:var(--orange-soft);color:var(--orange);font-size:12px;padding:2px 9px;border-radius:999px;font-weight:700;white-space:nowrap">ahorra 2 meses</span></span>
     </div>
     <div class="price-grid">
       <div class="plan">
         <h3>Starter</h3>
         <p class="who">Para autónomos y pymes que empiezan a licitar de forma organizada.</p>
-        <div class="price"><span class="amt" data-m="39 €" data-a="390 €">39 €</span><span class="unit">/mes</span></div>
-        <div class="per"><span class="bill" data-m="1 usuario · facturación mensual" data-a="1 usuario · facturación anual (390 €/año)">1 usuario · facturación mensual</span></div>
+        <div class="price"><span class="amt" data-m="39 €" data-a="390 €">390 €</span><span class="unit">/año</span></div>
+        <div class="per"><span class="bill" data-m="1 usuario · facturación mensual" data-a="1 usuario · facturación anual (390 €/año)">1 usuario · facturación anual (390 €/año)</span></div>
         <ul>
           <li>Buscador de licitaciones ilimitado</li>
           <li>Tablero kanban y agenda</li>
@@ -65,8 +65,8 @@
         <span class="badge">El más elegido</span>
         <h3>Pro</h3>
         <p class="who">Para empresas que se presentan a concursos de forma habitual.</p>
-        <div class="price"><span class="amt" data-m="129 €" data-a="1.290 €">129 €</span><span class="unit">/mes</span></div>
-        <div class="per"><span class="bill" data-m="Hasta 3 usuarios · facturación mensual" data-a="Hasta 3 usuarios · facturación anual (1.290 €/año)">Hasta 3 usuarios · facturación mensual</span></div>
+        <div class="price"><span class="amt" data-m="129 €" data-a="1.290 €">1.290 €</span><span class="unit">/año</span></div>
+        <div class="per"><span class="bill" data-m="Hasta 3 usuarios · facturación mensual" data-a="Hasta 3 usuarios · facturación anual (1.290 €/año)">Hasta 3 usuarios · facturación anual (1.290 €/año)</span></div>
         <ul>
           <li>Todo lo de Starter</li>
           <li><b>Hasta 50 acciones de IA al mes</b></li>
@@ -80,8 +80,8 @@
       <div class="plan">
         <h3>Agencia</h3>
         <p class="who">Para equipos y agencias con alto volumen de licitaciones.</p>
-        <div class="price"><span class="amt" data-m="299 €" data-a="2.990 €">299 €</span><span class="unit">/mes</span></div>
-        <div class="per"><span class="bill" data-m="Hasta 10 usuarios · facturación mensual" data-a="Hasta 10 usuarios · facturación anual (2.990 €/año)">Hasta 10 usuarios · facturación mensual</span></div>
+        <div class="price"><span class="amt" data-m="299 €" data-a="2.990 €">2.990 €</span><span class="unit">/año</span></div>
+        <div class="per"><span class="bill" data-m="Hasta 10 usuarios · facturación mensual" data-a="Hasta 10 usuarios · facturación anual (2.990 €/año)">Hasta 10 usuarios · facturación anual (2.990 €/año)</span></div>
         <ul>
           <li>Todo lo de Pro</li>
           <li>Hasta 10 usuarios</li>
@@ -160,9 +160,8 @@
     var lblM = document.getElementById('lblMensual');
     var lblA = document.getElementById('lblAnual');
     if(!sw) return;
-    var anual = false;
-    sw.addEventListener('click', function(){
-      anual = !anual;
+    var anual = true;   // anual por defecto
+    function apply(){
       sw.setAttribute('aria-checked', anual ? 'true' : 'false');
       sw.style.background = anual ? '#E8622A' : '#d8dbe4';
       knob.style.left = anual ? '27px' : '3px';
@@ -171,7 +170,9 @@
       document.querySelectorAll('.amt').forEach(function(el){ el.textContent = anual ? el.getAttribute('data-a') : el.getAttribute('data-m'); });
       document.querySelectorAll('.unit').forEach(function(el){ el.textContent = anual ? '/año' : '/mes'; });
       document.querySelectorAll('.bill').forEach(function(el){ el.textContent = anual ? el.getAttribute('data-a') : el.getAttribute('data-m'); });
-    });
+    }
+    sw.addEventListener('click', function(){ anual = !anual; apply(); });
+    apply();   // estado inicial: anual
   })();
 </script>
 
