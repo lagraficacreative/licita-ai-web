@@ -247,17 +247,11 @@ footer .logo small{color:#8b94ad}
 .feat .ic{color:var(--orange)}
 .prob .ic svg,.feat .ic svg{display:block}
 
-/* Chat box flotante */
-#cw-btn{position:fixed;right:22px;bottom:22px;z-index:9998;width:58px;height:58px;border-radius:50%;background:var(--orange);color:#fff;border:none;cursor:pointer;box-shadow:0 8px 24px rgba(232,98,42,.42);display:flex;align-items:center;justify-content:center;transition:.15s}
-#cw-btn:hover{background:var(--orange-dark);transform:translateY(-2px)}
-#cw-panel{position:fixed;right:22px;bottom:92px;z-index:9998;width:340px;max-width:calc(100vw - 44px);background:#fff;border-radius:16px;box-shadow:0 20px 54px rgba(26,34,56,.26);overflow:hidden;display:none}
-#cw-panel.open{display:block}
-.cw-head{background:var(--orange);color:#fff;padding:16px 18px}
-.cw-head b{font-size:15px;display:block}
-.cw-head span{font-size:12.5px;opacity:.9}
-.cw-body{padding:16px 18px}
-.cw-body input,.cw-body textarea{width:100%;box-sizing:border-box;padding:9px 11px;border:1px solid #e7e9ef;border-radius:9px;font-family:inherit;font-size:14px;margin-bottom:9px;outline:none;color:var(--ink)}
-.cw-body input:focus,.cw-body textarea:focus{border-color:var(--orange)}
-.cw-body button{width:100%;background:var(--orange);color:#fff;border:none;padding:11px;border-radius:9px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit}
-.cw-body button:hover{background:var(--orange-dark)}
-.cw-msg{font-size:13px;margin-top:8px;text-align:center}
+/* Botón flotante de WhatsApp */
+#wa-btn{position:fixed;right:22px;bottom:22px;z-index:9998;display:flex;align-items:center;gap:10px;background:#25D366;color:#fff;text-decoration:none;border-radius:999px;padding:12px 18px 12px 14px;box-shadow:0 8px 24px rgba(37,211,102,.42);transition:.15s;font-family:inherit}
+#wa-btn:hover{background:#1ebe5b;transform:translateY(-2px)}
+#wa-btn svg{flex-shrink:0}
+.wa-text{display:flex;flex-direction:column;line-height:1.15}
+.wa-text b{font-size:14px;font-weight:700}
+.wa-text span{font-size:11.5px;opacity:.92}
+@media(max-width:520px){.wa-text{display:none}#wa-btn{padding:14px;border-radius:50%}}
