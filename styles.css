@@ -89,9 +89,10 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdro
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}.hero h1{font-size:40px}}
 
 /* page header (interior pages) */
-.page-head{padding:70px 0 10px;background:radial-gradient(900px 400px at 85% -20%,#fff0e9 0%,rgba(255,243,238,0) 60%),var(--bg);text-align:center}
-.page-head h1{font-size:46px;font-weight:900;color:var(--navy)}
-.page-head p{font-size:19px;color:var(--slate);max-width:640px;margin:18px auto 0}
+.page-head{padding:70px 0 10px;background:linear-gradient(135deg,#E8622A 0%,#d2511f 55%,#c44e1c 100%);text-align:center}
+.page-head .eyebrow{color:#ffe1d4}
+.page-head h1{font-size:46px;font-weight:900;color:#fff}
+.page-head p{font-size:19px;color:rgba(255,255,255,.94);max-width:640px;margin:18px auto 0}
 @media(max-width:700px){.page-head h1{font-size:34px}}
 
 /* App mock */
