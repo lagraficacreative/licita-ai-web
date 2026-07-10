@@ -271,3 +271,12 @@ footer .logo small{color:#8b94ad}
 .nav .nav-cta{margin-left:28px;flex:0 0 auto}
 .logo-img-foot{height:40px;width:auto;display:block;margin-bottom:4px}
 @media(max-width:560px){.logo-img{height:30px}.nav .logo{margin-right:0}}
+
+
+/* Breadcrumbs */
+.crumbs{background:#fff;border-bottom:1px solid var(--line)}
+.crumbs .wrap{padding:11px 24px;font-size:13px;color:var(--slate)}
+.crumbs a{color:var(--slate);text-decoration:none}
+.crumbs a:hover{color:var(--orange)}
+.crumbs .sep{color:#cfc7bb;margin:0 3px}
+.crumbs .cur{color:var(--navy);font-weight:600}
