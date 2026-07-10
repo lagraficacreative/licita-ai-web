@@ -267,6 +267,7 @@ footer .logo small{color:#8b94ad}
 
 /* Logo como imagen (marca laLicita.ai) */
 .logo-img{height:34px;width:auto;display:block}
-.nav .logo{margin-right:26px}
+.nav .logo{margin-right:44px}
+.nav .nav-cta{margin-left:40px}
 .logo-img-foot{height:40px;width:auto;display:block;margin-bottom:4px}
 @media(max-width:560px){.logo-img{height:30px}.nav .logo{margin-right:0}}
