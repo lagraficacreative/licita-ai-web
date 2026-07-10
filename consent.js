@@ -11,7 +11,7 @@
 // ─────────────────────────────────────────────────────────────────────────
 (function () {
   // ⬇️⬇️  PEGA AQUÍ TUS IDs REALES  ⬇️⬇️
-  var GA4_ID = '';   // ej.: 'G-XXXXXXXXXX'   (Google Analytics 4)
+  var GA4_ID = 'G-GS2DNSVCNW';   // Google Analytics 4 · Web comercial
   var ADS_ID = '';   // ej.: 'AW-XXXXXXXXX'   (Google Ads)
   // ⬆️⬆️  ——————————————————————————  ⬆️⬆️
 
