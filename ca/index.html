@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programari de licitacions públiques amb IA | laLicita.ai</title>
+<meta name="description" content="Programari amb IA per a empreses que liciten: troba licitacions públiques, analitza plecs i redacta memòries tècniques. Prova laLicita.ai 3 dies.">
+<link rel="canonical" href="https://lalicita.ai/ca/">
+<link rel="alternate" hreflang="es" href="https://lalicita.ai/">
+<link rel="alternate" hreflang="ca" href="https://lalicita.ai/ca/">
+<link rel="alternate" hreflang="x-default" href="https://lalicita.ai/">
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="laLicita.ai">
+<meta property="og:title" content="laLicita.ai — Troba, analitza i guanya més licitacions públiques">
+<meta property="og:description" content="El copilot amb IA per licitar: troba licitacions, analitza plecs, calcula on es guanyen punts i redacta les teves memòries tècniques. 3 dies de prova, cancel·la quan vulguis.">
+<meta property="og:url" content="https://lalicita.ai/ca/">
+<meta property="og:image" content="https://lalicita.ai/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="laLicita.ai — Troba, analitza i guanya més licitacions públiques">
+<meta name="twitter:description" content="El copilot amb IA per licitar. 3 dies de prova, cancel·la quan vulguis.">
+<meta name="twitter:image" content="https://lalicita.ai/og-image.png">
+<link rel="stylesheet" href="../styles.css">
+<script src="../nav.js" defer></script>
+<script src="../consent.js" defer></script>
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../favicon.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","@id":"https://lalicita.ai/#org","name":"laLicita.ai","legalName":"La Gràfica Creative Experience S.L.","url":"https://lalicita.ai/","logo":"https://lalicita.ai/logo.png","description":"Programari amb IA per trobar, analitzar i guanyar licitacions públiques."},
+{"@type":"WebSite","@id":"https://lalicita.ai/ca/#website","url":"https://lalicita.ai/ca/","name":"laLicita.ai","publisher":{"@id":"https://lalicita.ai/#org"},"inLanguage":"ca-ES"},
+{"@type":"SoftwareApplication","name":"laLicita.ai","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://lalicita.ai/ca/","description":"Programari per cercar licitacions públiques, analitzar plecs amb IA, calcular on es guanyen punts i redactar memòries tècniques i DEUC.","offers":{"@type":"Offer","price":"25.00","priceCurrency":"EUR","description":"Pla Starter des de 25 €/mes"},"publisher":{"@id":"https://lalicita.ai/#org"}}
+]}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo"><img src="../logo.png" class="logo-img" alt="laLicita.ai — Gestió de licitacions públiques"></a>
+    <nav class="nav-links">
+      <a href="index.html" class="active">Inici</a>
+      <a href="producte.html">Producte</a>
+      <a href="preus.html">Preus</a>
+      <a href="../guias.html">Guies</a>
+      <a href="../sobre.html">Qui som</a>
+      <a href="../contacto.html">Contacte</a>
+      <a href="https://app.lalicita.ai/buscador">Cercador</a>
+      <a href="../index.html" lang="es">ES</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://app.lalicita.ai/" class="btn btn-ghost">Inicia la sessió</a>
+      <a href="https://app.lalicita.ai/registre.html" class="btn btn-primary">Comença gratis</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap" style="max-width:860px;margin:0 auto;text-align:center">
+    <span class="eyebrow">El copilot de licitacions públiques</span>
+    <h1>Troba, analitza i <span class="hl" style="color:#2b2b30">guanya</span> més licitacions públiques</h1>
+    <p class="lead" style="margin:18px auto 0;max-width:720px">Reuneix les teves licitacions, analitza els plecs amb IA i et diu <b>on es guanyen més punts</b>.<br>Menys hores perdudes, més concursos guanyats.</p>
+    <!-- Cerca amb IA — gran i centrat -->
+    <div style="background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.32);border-radius:18px;padding:22px;margin:28px auto 8px;max-width:660px">
+      <div style="font-size:16px;font-weight:800;color:#fff;margin-bottom:14px">🤖 Cerca amb IA — descriu-ho i t'omple el cercador</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <input id="heroAi" type="text" placeholder="Ex.: disseny gràfic i campanyes per a ajuntaments" style="flex:1 1 300px;min-width:0;border:0;outline:0;border-radius:12px;padding:16px 18px;font-size:17px;font-family:inherit;color:#23293a">
+        <button type="button" onclick="goHeroAi()" style="background:#fff;color:var(--orange);border:0;border-radius:12px;padding:16px 28px;font-weight:800;font-size:17px;cursor:pointer;font-family:inherit;white-space:nowrap">✨ Cerca amb IA</button>
+      </div>
+      <div style="font-size:13.5px;color:rgba(255,255,255,.92);margin-top:13px;line-height:1.6">✨ <b>Prova-la gratis</b> — 2 cerques amb IA sense registrar-te.<br>Vols continuar? <a href="https://app.lalicita.ai/registre.html" style="color:#fff;font-weight:700;text-decoration:underline">Subscriu-t'hi (3 dies gratis)</a>.</div>
+    </div>
+    <div class="hero-cta" style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+      <a href="https://app.lalicita.ai/registre.html" class="btn btn-primary btn-lg">Comença gratis</a>
+      <a href="https://app.lalicita.ai/demo" class="btn btn-ghost btn-lg">Demana una demo</a>
+    </div>
+    <div style="margin-top:14px;font-size:14px;color:rgba(255,255,255,.85)">3 dies de prova, cancel·la quan vulguis.</div>
+    <div class="hero-trust" style="justify-content:center">
+      <span id="liveCount" style="transition:opacity .4s">✓ <b>+5.000</b> licitacions obertes</span>
+      <span>✓ <b>Sense permanència</b></span>
+      <span>✓ <b>3 dies</b> de prova</span>
+      <span>✓ Dades de <b>PLACSP</b> i autonomies</span>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="steps">
+  <div class="wrap center">
+    <span class="eyebrow" style="color:#ffb78f">Com funciona</span>
+    <h2>De la cerca a l'oferta guanyadora, en un sol flux</h2>
+    <p class="lead" style="margin:16px auto 0">Tot el procés de licitació, ordenat i assistit per IA dins de la mateixa eina.</p>
+    <div class="steps-grid">
+      <div class="step"><div class="n">1</div><h3>Troba</h3><p>Filtra licitacions obertes per paraula clau, tipus de contracte, comunitat i pressupost. Dades en temps real de PLACSP i autonomies.</p></div>
+      <div class="step"><div class="n">2</div><h3>Organitza</h3><p>Desa les que t'interessen en un tauler kanban amb terminis, checklist i sincronització automàtica amb Google Sheets.</p></div>
+      <div class="step"><div class="n">3</div><h3>Analitza amb IA</h3><p>Puja el plec i la IA n'extreu els requisits, els criteris d'adjudicació i on es guanyen els punts.</p></div>
+      <div class="step"><div class="n">4</div><h3>Redacta</h3><p>La IA et genera la memòria tècnica i omple la documentació administrativa en format Word.</p></div>
+      <div class="step"><div class="n">5</div><h3>Presenta i guanya</h3><p>T'avisem de tots els canvis que arriben de l'expedient —avaluació, requeriments, adjudicació, formalització…— i en segueixes el resultat fins al final.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FEATURES SUMMARY -->
+<section>
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Producte</span>
+      <h2>Tot el que necessites per licitar, en un sol lloc</h2>
+      <p class="lead" style="margin:16px auto 0">Els mòduls que cobreixen el cicle complet d'una licitació pública.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div><h3>Cercador intel·ligent</h3><p>Licitacions obertes filtrades per sector, organisme, comunitat i pressupost, ordenades per data límit amb alertes de termini.</p></div>
+      <div class="feat"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="18" rx="1"/><rect x="14" y="3" width="7" height="11" rx="1"/></svg></div><h3>Tauler kanban</h3><p>Pipeline visual dels teus concursos —d'"Arribades" a "Guanyades"— amb checklist per licitació i exportació a Excel.</p></div>
+      <div class="feat"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><path d="M8 16h.01"/><path d="M16 16h.01"/></svg></div><h3>Especialista LicitAI</h3><p>Analitza plecs, defineix l'estratègia d'adjudicació, redacta memòries tècniques i calcula baixa temerària i DEUC.</p></div>
+      <div class="feat"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg></div><h3>Agenda de presentacions</h3><p>Calendari amb tots els terminis a la vista, avisos per proximitat de data i notes de l'equip.</p></div>
+      <div class="feat"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><h3>Guia d'empresa</h3><p>Repositori editable amb les dades de la teva empresa que alimenta la IA per personalitzar la documentació.</p></div>
+      <div class="feat"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg></div><h3>Integracions</h3><p>Sincronització amb Google Sheets, adjunts de Google Drive i dades oficials de PLACSP, Generalitat i BOE.</p></div>
+      <div class="feat"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></div><h3>Alertes per correu</h3><p>Desa les teves cerques i rep per correu les licitacions noves que encaixen amb el teu sector, amb un <b>Excel adjunt</b> a punt per al teu equip.</p></div>
+      <div class="feat"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg></div><h3>La teva bústia de correu</h3><p>Connecta el teu <b>propi compte de correu</b> i laLicita.ai classifica automàticament avisos i requeriments dels expedients al teu tauler.</p></div>
+    </div>
+    <div class="center" style="margin-top:44px"><a href="producte.html" class="btn btn-ghost btn-lg">Mira el producte en detall</a></div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="diff">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Per què laLicita.ai</span>
+      <h2>No són només alertes. És guanyar el concurs.</h2>
+      <p class="lead" style="margin:16px auto 0">Les plataformes tradicionals t'avisen de les licitacions. laLicita.ai t'ajuda a redactar-les i guanyar-les.</p>
+    </div>
+    <div class="cmp">
+      <table>
+        <thead><tr><th></th><th>Plataformes d'alertes</th><th class="hl">laLicita.ai</th><th>Eines RFP anglosaxones</th></tr></thead>
+        <tbody>
+          <tr><td>Cerca de licitacions</td><td class="yes">Sí</td><td class="yes col-hl">Sí</td><td class="no">No</td></tr>
+          <tr><td>Anàlisi de plecs amb IA</td><td class="no">No</td><td class="yes col-hl">Sí</td><td class="yes">Sí</td></tr>
+          <tr><td>Estratègia de puntuació</td><td class="no">No</td><td class="yes col-hl">Sí</td><td class="no">Parcial</td></tr>
+          <tr><td>Redacció de memòria tècnica</td><td class="no">No</td><td class="yes col-hl">Sí</td><td class="yes">Sí</td></tr>
+          <tr><td>Càlcul de baixa temerària i DEUC</td><td class="no">No</td><td class="yes col-hl">Sí</td><td class="no">No</td></tr>
+          <tr><td>Adaptat a la contractació pública espanyola</td><td class="yes">Sí</td><td class="yes col-hl">Sí</td><td class="no">No</td></tr>
+          <tr><td>En castellà i català</td><td class="yes">Sí</td><td class="yes col-hl">Sí</td><td class="no">No</td></tr>
+          <tr><td>Preu de partida</td><td>29–40 €/mes</td><td class="col-hl" style="font-weight:700;color:var(--orange)">Des de 25 €/mes</td><td>75–1.200 $/mes</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <h2>Comença a guanyar més concursos</h2>
+    <p>Comença gratis i t'ensenyem com laLicita.ai pot estalviar-te hores en cada licitació. Sense compromís.</p>
+    <a href="https://app.lalicita.ai/registre.html" class="btn btn-primary btn-lg">Comença gratis</a>
+    <a href="https://app.lalicita.ai/demo" class="btn btn-lg" style="background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.7);margin-left:10px">Demana una demo</a>
+    <div class="mini">o escriu-nos per <b><a href="https://wa.me/34973576629?text=Hola%2C%20m%27interessa%20laLicita.AI." target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">WhatsApp</a></b> o a <b>lalicita@lagrafica.com</b></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div style="max-width:300px">
+        <div class="logo"><img src="../logo-white.png" class="logo-img-foot" alt="laLicita.ai"></div>
+        <p style="margin-top:14px;color:#8b94ad">El copilot amb IA per trobar, analitzar i guanyar més licitacions públiques.</p>
+        <p style="margin-top:12px;color:#8b94ad;font-size:13.5px;line-height:1.7">🕘 Atenció de dl a dv, de 9 a 18 h<br>💬 <a href="https://wa.me/34973576629" target="_blank" rel="noopener" style="color:#8b94ad;text-decoration:underline">WhatsApp</a> · ✉️ <a href="mailto:lalicita@lagrafica.com" style="color:#8b94ad;text-decoration:underline">lalicita@lagrafica.com</a></p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col"><b>Producte</b><a href="producte.html">Funcionalitats</a><a href="index.html#como">Com funciona</a><a href="preus.html">Preus</a></div>
+        <div class="foot-col"><b>Empresa</b><a href="../sobre.html">Qui som</a><a href="../contacto.html">Contacte</a><a href="../privacidad.html">Privacitat</a><a href="../aviso-legal.html">Avís legal</a><a href="https://app.lalicita.ai/">Inicia la sessió</a></div>
+        <div class="foot-col"><b>Fonts</b><a href="https://contrataciondelestado.es">PLACSP</a><a href="https://contractaciopublica.cat">Contractació Pública</a><a href="https://boe.es">BOE</a></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 laLicita.ai · <a href="../aviso-legal.html" style="color:inherit">Avís legal</a></span>
+      <span>Dades oficials de PLACSP i plataformes autonòmiques</span>
+    </div>
+  </div>
+</footer>
+
+<!-- BOTÓ FLOTANT DE WHATSAPP -->
+<a id="wa-btn" href="https://wa.me/34973576629?text=Hola%2C%20m%27interessa%20laLicita.AI.%20Em%20podeu%20donar%20m%C3%A9s%20informaci%C3%B3%3F" target="_blank" rel="noopener" aria-label="Escriu-nos per WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.21-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 2.5a9.5 9.5 0 0 0-8.1 14.46L2.5 21.5l4.66-1.4a9.5 9.5 0 1 0 4.88-17.6zm0 17.4a7.86 7.86 0 0 1-4.01-1.1l-.29-.17-2.97.78.79-2.9-.19-.3a7.9 7.9 0 1 1 6.67 3.69z"/></svg>
+  <span class="wa-text"><b>Escriu-nos per WhatsApp</b><span>Et responem de dl a dv, 9-18 h</span></span>
+</a>
+<script>
+  function goHeroAi(){
+    var v = (document.getElementById('heroAi').value || '').trim();
+    var url = 'https://app.lalicita.ai/buscador?ia=1' + (v ? '&q=' + encodeURIComponent(v) : '');
+    window.location.href = url;
+  }
+  // Comptador en viu de licitacions obertes (des del cercador públic)
+  (function(){
+    var el = document.getElementById('liveCount');
+    if(!el) return;
+    fetch('https://app.lalicita.ai/api/buscar?abiertas=1&page_size=1')
+      .then(function(r){return r.json();})
+      .then(function(d){
+        var n = d && (d.total!=null ? d.total : (d.count!=null ? d.count : null));
+        if(n!=null && n>0){ el.querySelector('b').textContent = Number(n).toLocaleString('ca-ES'); el.style.opacity='1'; }
+      }).catch(function(){});
+  })();
+</script>
+
+</body>
+</html>

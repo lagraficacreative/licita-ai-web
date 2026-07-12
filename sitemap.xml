@@ -1,13 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://lalicita.ai/</loc><lastmod>2026-07-10</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://lalicita.ai/producto.html</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://lalicita.ai/precios.html</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://lalicita.ai/</loc><lastmod>2026-07-10</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lalicita.ai/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://lalicita.ai/ca/"/>
+  </url>
+  <url><loc>https://lalicita.ai/producto.html</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lalicita.ai/producto.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://lalicita.ai/ca/producte.html"/>
+  </url>
+  <url><loc>https://lalicita.ai/precios.html</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lalicita.ai/precios.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://lalicita.ai/ca/preus.html"/>
+  </url>
+  <url><loc>https://lalicita.ai/ca/</loc><lastmod>2026-07-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lalicita.ai/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://lalicita.ai/ca/"/>
+  </url>
+  <url><loc>https://lalicita.ai/ca/producte.html</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lalicita.ai/producto.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://lalicita.ai/ca/producte.html"/>
+  </url>
+  <url><loc>https://lalicita.ai/ca/preus.html</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lalicita.ai/precios.html"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://lalicita.ai/ca/preus.html"/>
+  </url>
   <url><loc>https://lalicita.ai/guias.html</loc><lastmod>2026-07-10</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://lalicita.ai/guia-presentarse-licitacion.html</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://lalicita.ai/guia-buscar-licitaciones.html</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://lalicita.ai/guia-deuc.html</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://lalicita.ai/guia-baja-temeraria.html</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://lalicita.ai/guia-solvencia.html</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://lalicita.ai/guia-cpv.html</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://lalicita.ai/guia-criterios-adjudicacion.html</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://lalicita.ai/guia-garantias.html</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://lalicita.ai/licitaciones-limpieza.html</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lalicita.ai/licitaciones-obras.html</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lalicita.ai/licitaciones-informatica.html</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lalicita.ai/licitaciones-diseno-comunicacion.html</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://lalicita.ai/sobre.html</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://lalicita.ai/contacto.html</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://lalicita.ai/aviso-legal.html</loc><lastmod>2026-07-10</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
