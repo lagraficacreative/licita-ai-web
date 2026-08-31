@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 :root{
-  --orange:#E8622A;
-  --orange-dark:#c44e1c;
+  --orange:#C2410C;
+  --orange-dark:#9A3412;
   --orange-soft:#fff3ee;
   --navy:#1a2238;
   --ink:#23293a;
@@ -25,7 +25,7 @@ img{max-width:100%;display:block}
 .center{text-align:center}
 
 .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:16px;padding:14px 26px;border-radius:12px;cursor:pointer;border:none;transition:.18s;white-space:nowrap}
-.btn-primary{background:var(--orange);color:#fff;box-shadow:0 6px 20px rgba(232,98,42,.28)}
+.btn-primary{background:var(--orange);color:#fff;box-shadow:0 6px 20px rgba(194,65,12,.28)}
 .btn-primary:hover{background:var(--orange-dark);transform:translateY(-1px)}
 .btn-ghost{background:#fff;color:var(--navy);border:1.5px solid var(--line)}
 .btn-ghost:hover{border-color:var(--orange);color:var(--orange)}
@@ -51,7 +51,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdro
 .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:0;width:42px;height:42px;color:var(--navy);align-items:center;justify-content:center}
 .nav-toggle svg{display:block}
 .nav-login-mobile{display:none}
-@media(max-width:1024px){
+@media(max-width:1180px){
   .nav-toggle{display:inline-flex}
   .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid var(--line);box-shadow:var(--shadow-sm);padding:6px 0;max-height:0;overflow:hidden;transition:max-height .26s ease}
   header.open .nav-links{max-height:80vh}
