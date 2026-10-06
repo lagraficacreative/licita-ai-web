@@ -69,7 +69,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdro
 }
 
 /* HERO */
-.hero{padding:80px 0 70px;background:linear-gradient(135deg,#E8622A 0%,#d2511f 55%,#c44e1c 100%);color:#fff}
+.hero{padding:80px 0 70px;background:linear-gradient(135deg,rgba(232,98,42,.72) 0%,rgba(210,81,31,.72) 55%,rgba(196,78,28,.78) 100%),url('hero-bg.jpg') center/cover no-repeat;color:#fff}
 .hero .eyebrow{color:#ffe1d4}
 .hero h1{color:#fff}
 .hero h1 .hl{color:#1a2238}
