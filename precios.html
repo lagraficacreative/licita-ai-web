@@ -74,7 +74,7 @@
           <li class="off">Generación de memorias técnicas</li>
           <li class="off">Multiusuario</li>
         </ul>
-        <a href="https://app.lalicita.ai/registro.html" class="btn btn-ghost">Empezar gratis</a>
+        <a href="https://app.lalicita.ai/registro.html" class="btn btn-ghost" data-plan="starter">Empezar gratis</a>
       </div>
       <div class="plan pop">
         <span class="badge">El más elegido</span>
@@ -91,7 +91,7 @@
           <li>Cálculo de baja temeraria y DEUC</li>
           <li>Sincronización con Google Sheets</li>
         </ul>
-        <a href="https://app.lalicita.ai/registro.html" class="btn btn-primary">Empezar gratis</a>
+        <a href="https://app.lalicita.ai/registro.html" class="btn btn-primary" data-plan="pro">Empezar gratis</a>
       </div>
       <div class="plan">
         <h3>Agencia</h3>
@@ -107,7 +107,7 @@
           <li>Soporte prioritario</li>
           <li>Guía de empresa personalizada</li>
         </ul>
-        <a href="https://app.lalicita.ai/registro.html" class="btn btn-ghost">Empezar gratis</a>
+        <a href="https://app.lalicita.ai/registro.html" class="btn btn-ghost" data-plan="agencia">Empezar gratis</a>
       </div>
     </div>
     <div style="margin-top:28px;border:1.5px solid var(--line);border-radius:18px;padding:26px 30px;background:#fff;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;box-shadow:var(--shadow-sm)">
@@ -220,6 +220,11 @@
       document.querySelectorAll('.amt').forEach(function(el){ el.textContent = anual ? el.getAttribute('data-a') : el.getAttribute('data-m'); });
       document.querySelectorAll('.unit').forEach(function(el){ el.textContent = anual ? '/año' : '/mes'; });
       document.querySelectorAll('.bill').forEach(function(el){ el.textContent = anual ? el.getAttribute('data-a') : el.getAttribute('data-m'); });
+      // P2 #5 informe 6-oct: pasar plan y periodo al registro para que no se pierda la elección
+      document.querySelectorAll('a[data-plan]').forEach(function(a){
+        var plan = a.getAttribute('data-plan');
+        a.href = 'https://app.lalicita.ai/registro.html?plan=' + plan + '&periodo=' + (anual ? 'anual' : 'mes');
+      });
     }
     sw.addEventListener('click', function(){ anual = !anual; apply(); });
     apply();   // estado inicial: anual
