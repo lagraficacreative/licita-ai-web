@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estado del servicio | laLicita.ai</title>
+<meta name="description" content="Estado operativo en tiempo real de los componentes de laLicita.ai: base de datos, pagos, IA, email y sincronización de licitaciones.">
+<link rel="stylesheet" href="styles.css">
+<script src="nav.js" defer></script>
+<script src="consent.js" defer></script>
+<link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo"><img src="logo.png" class="logo-img" alt="laLicita.ai"></a>
+    <nav class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="producto.html">Producto</a>
+      <a href="precios.html">Precios</a>
+      <a href="guias.html">Guías</a>
+      <a href="sobre.html">Sobre nosotros</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="https://app.lalicita.ai/buscador">Buscador</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://app.lalicita.ai/" class="btn btn-ghost">Iniciar sesión</a>
+      <a href="https://app.lalicita.ai/registro.html" class="btn btn-primary">Empezar gratis</a>
+    </div>
+  </div>
+</header>
+
+<div class="page-head" style="background:linear-gradient(135deg,#E8622A 0%,#d2511f 55%,#c44e1c 100%)">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#ffe1d4">Transparencia operativa</span>
+    <h1 style="color:#fff">Estado del servicio</h1>
+    <p style="color:rgba(255,255,255,.94)">Comprobación en tiempo real de los componentes de Licita.AI. Si ves un problema que no está reflejado aquí, escríbenos.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap" style="max-width:720px">
+    <div id="estado-wrap">
+      <div style="text-align:center;padding:60px 0;color:var(--slate);font-size:15px">⏳ Comprobando estado…</div>
+    </div>
+    <div style="text-align:center;margin-top:28px;font-size:13px;color:var(--slate)">
+      Datos actualizados cada 30 segundos. Última comprobación: <span id="estado-ts">—</span>
+    </div>
+    <div style="text-align:center;margin-top:40px;padding:24px;background:var(--bg-alt);border:1px solid var(--line);border-radius:14px">
+      <p style="margin:0;font-size:15px;color:var(--ink)"><b>¿Experimentas un problema no reflejado aquí?</b></p>
+      <p style="margin:8px 0 0;font-size:14px;color:var(--slate)">Escríbenos a <a href="mailto:lalicita@lagrafica.com" style="color:var(--orange);font-weight:600">lalicita@lagrafica.com</a> o por <a href="https://wa.me/34639087024" target="_blank" style="color:var(--orange);font-weight:600">WhatsApp</a>.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .estado-item{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:10px;box-shadow:var(--shadow-sm)}
+  .estado-item .label{font-weight:700;color:var(--navy);font-size:16px}
+  .estado-item .detail{font-size:12.5px;color:var(--slate);margin-top:3px}
+  .estado-item .pill{font-weight:800;font-size:13px;padding:6px 14px;border-radius:999px;white-space:nowrap}
+  .estado-item.ok .pill{background:#e9f8ef;color:#15803d}
+  .estado-item.ko .pill{background:#fef2f2;color:#991b1b}
+  .estado-head{text-align:center;margin-bottom:28px;padding:22px;border-radius:14px}
+  .estado-head.ok{background:#e9f8ef;color:#15803d;border:1.5px solid #86efac}
+  .estado-head.ko{background:#fef2f2;color:#991b1b;border:1.5px solid #fca5a5}
+  .estado-head b{font-size:22px;display:block;margin-bottom:4px}
+</style>
+
+<script>
+async function cargarEstado(){
+  try {
+    const r = await fetch('https://app.lalicita.ai/api/estado', {cache:'no-store'});
+    const d = await r.json();
+    const wrap = document.getElementById('estado-wrap');
+    const header = d.ok
+      ? '<div class="estado-head ok"><b>✅ Todos los sistemas operativos</b>Comprobaciones automáticas en vivo.</div>'
+      : '<div class="estado-head ko"><b>⚠️ Hay incidencias</b>Estamos trabajando para resolverlas.</div>';
+    const items = Object.values(d.checks || {}).map(c => (
+      '<div class="estado-item ' + (c.ok ? 'ok' : 'ko') + '">'
+      + '<div><div class="label">' + c.label + '</div>'
+      + (c.detail ? '<div class="detail">' + c.detail + '</div>' : '')
+      + '</div>'
+      + '<div class="pill">' + (c.ok ? 'Operativo' : 'Incidencia') + '</div>'
+      + '</div>'
+    )).join('');
+    wrap.innerHTML = header + items;
+    document.getElementById('estado-ts').textContent = new Date(d.ts).toLocaleString('es-ES');
+  } catch(e){
+    document.getElementById('estado-wrap').innerHTML =
+      '<div class="estado-head ko"><b>⚠️ No se pudo comprobar el estado</b>Error de conexión con la plataforma.</div>';
+  }
+}
+cargarEstado();
+setInterval(cargarEstado, 30000);
+</script>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div style="max-width:300px"><div class="logo"><img src="logo-white.png" class="logo-img-foot" alt="laLicita.ai"></div></div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <b>Producto</b><a href="producto.html">Funcionalidades</a><a href="precios.html">Precios</a><a href="estado.html">Estado del servicio</a>
+        </div>
+        <div class="foot-col">
+          <b>Empresa</b><a href="sobre.html">Sobre nosotros</a><a href="contacto.html">Contacto</a>
+        </div>
+        <div class="foot-col">
+          <b>Legal</b><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="condiciones-contratacion.html">Condiciones</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 Licita.AI</div>
+  </div>
+</footer>
+
+</body>
+</html>
