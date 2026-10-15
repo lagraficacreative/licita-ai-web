@@ -15,7 +15,7 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Códigos CPV: qué son y cómo usarlos para encontrar licitaciones","description":"Qué es el código CPV, cómo se estructura, los códigos más habituales por sector y cómo usarlos para encontrar todas las licitaciones públicas de tu actividad.","inLanguage":"es-ES","author":{"@type":"Organization","name":"laLicita.ai"},"publisher":{"@type":"Organization","name":"laLicita.ai","logo":{"@type":"ImageObject","url":"https://lalicita.ai/logo.png"}},"mainEntityOfPage":"https://lalicita.ai/guia-cpv.html","datePublished":"2026-07-10","dateModified":"2026-07-10"}
+{"@context":"https://schema.org","@type":"Article","headline":"Códigos CPV: qué son y cómo usarlos para encontrar licitaciones","description":"Qué es el código CPV, cómo se estructura, los códigos más habituales por sector y cómo usarlos para encontrar todas las licitaciones públicas de tu actividad.","inLanguage":"es-ES","author":{"@type":"Organization","name":"Equipo laLicita.ai"},"publisher":{"@type":"Organization","name":"laLicita.ai","logo":{"@type":"ImageObject","url":"https://lalicita.ai/logo.png"}},"mainEntityOfPage":"https://lalicita.ai/guia-cpv.html","datePublished":"2026-07-10","dateModified":"2026-10-15"}
 </script>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="laLicita.ai">
@@ -67,6 +67,8 @@
   <div class="wrap prose" style="max-width:760px">
     <p>El <b>CPV</b> (<i>Common Procurement Vocabulary</i>, Vocabulario Común de Contratación) es el sistema de códigos con el que todas las administraciones de la UE clasifican el objeto de sus contratos. Cada licitación lleva uno o varios CPV, y dominarlos es la forma más fiable de <b>no perderte ninguna licitación de tu sector</b>.</p>
 
+    <p class="guide-meta" style="font-size:13px;color:var(--slate);margin:-4px 0 24px;padding-bottom:16px;border-bottom:1px solid var(--line)">Por <b>Equipo laLicita.ai</b> · Actualizado el 15 de octubre de 2026 · Lectura 7 min</p>
+
     <h3>Cómo se estructura un CPV</h3>
     <p>Es un código de <b>8 dígitos más uno de control</b>, en árbol de lo general a lo específico:</p>
     <ul>
@@ -103,6 +105,39 @@
       <li>No revisar el CPV al acreditar la experiencia: los certificados de <a href="guia-solvencia.html">solvencia técnica</a> deben corresponder a trabajos del mismo tipo.</li>
     </ul>
 
+    
+    <h3>Cómo elegir el CPV principal correcto</h3>
+    <p>Elegir mal el CPV es una de las causas principales de que una licitación pase desapercibida o de que acreditar la experiencia después se complique. Para una pyme con una actividad clara, el método que mejor funciona es este:</p>
+    <ol>
+      <li><b>Define el <i>objeto</i> en una frase</b>. No "diseño" sino "diseño gráfico editorial para publicaciones impresas". Un CPV describe un objeto, no una capacidad.</li>
+      <li><b>Busca ese objeto en el buscador oficial del CPV</b>. El sistema está en SIMAP (<i>ted.europa.eu/udl?uri=TED:NOTICE:SIMAP</i>) con nomenclatura completa. Introduce la palabra más específica que puedas.</li>
+      <li><b>Baja al nivel de ocho cifras</b>. Los CPV tienen hasta 9 dígitos; cuanto más preciso, menos ruido pero también menos cobertura. Para empezar, el nivel de 8 cifras suele ser el equilibrio correcto.</li>
+      <li><b>Comprueba con dos ejemplos reales</b>. Busca ese código en PLACSP y mira si lo que aparece es coherente con tu actividad. Si tres de cada cuatro resultados son irrelevantes, el código no es el tuyo.</li>
+      <li><b>Añade los CPV vecinos como secundarios</b>. En tu búsqueda de alertas, no en tu actividad declarada. Un diseñador editorial puede querer vigilar también 79822 (diseño gráfico), 79800 (artes gráficas) y 79823 (impresión).</li>
+    </ol>
+
+    <h3>Los nueve niveles del CPV y cuándo usar cada uno</h3>
+    <p>La estructura del vocabulario común es jerárquica. Un CPV completo (ej. <b>79822500-7</b>) descompone en:</p>
+    <ul>
+      <li><b>División</b> (dos primeras cifras, p. ej. 79): <i>Servicios para empresas</i>. Rara vez útil por sí sola — demasiado genérica.</li>
+      <li><b>Grupo</b> (tres cifras, 798): <i>Servicios de edición, impresión y relacionados</i>.</li>
+      <li><b>Clase</b> (cuatro cifras, 7982): <i>Servicios de diseño</i>.</li>
+      <li><b>Categoría</b> (cinco a ocho cifras, 798225 → 79822500): nivel más preciso. Es el nivel estándar en los pliegos.</li>
+      <li><b>Dígito de control</b> (último, tras el guion): calculado automáticamente, no se usa para buscar.</li>
+    </ul>
+    <p>En las búsquedas por alertas conviene filtrar por los primeros 5 o 6 dígitos, no por el código completo: así cubres variantes que la administración haya codificado ligeramente diferente para el mismo tipo de contrato.</p>
+
+    <h3>CPV complementarios: cuándo añadirlos y cómo</h3>
+    <p>La LCSP permite que un expediente lleve un CPV principal y hasta <b>veinte CPV adicionales</b>. Esto es útil cuando el objeto combina varios servicios: por ejemplo, una campaña de comunicación institucional incluye diseño gráfico (79822), publicidad (79340), producción audiovisual (92111) y relaciones públicas (79416). La administración puede codificar bien o mal esa combinación, y por eso, cuando configuras alertas, lo recomendable es:</p>
+    <ul>
+      <li>Añadir con operador OR entre 3 y 6 códigos vecinos al tuyo principal.</li>
+      <li>No incluir CPV demasiado generalistas (nivel de dos o tres cifras) salvo que tu capacidad abarque toda esa familia.</li>
+      <li>Revisar la configuración cada seis meses: la actividad real de la empresa evoluciona y la codificación de la administración también.</li>
+    </ul>
+
+    <h3>Qué pasa cuando el pliego usa un CPV equivocado</h3>
+    <p>No es raro encontrar expedientes mal clasificados. El objeto del contrato (lo que pone en el PCAP) manda sobre el CPV: puedes presentarte aunque el código esté mal elegido, siempre que la actividad descrita encaje con la tuya. Para evitar perder esas licitaciones, en lugar de buscar solo por CPV combínalo con <b>palabras clave en el objeto</b> ("campaña", "identidad", "memoria técnica", nombres de sectores). Esto duplica tu alcance y es, en la práctica, cómo funcionan los buscadores especializados.</p>
+
     <p>En <a href="producto.html" style="color:var(--orange);font-weight:600">laLicita.ai</a> no necesitas saberte los códigos: describes tu actividad con tus palabras y la búsqueda con IA la traduce a los CPV y filtros adecuados, con alertas diarias por email.</p>
     <p style="margin-top:34px;padding-top:20px;border-top:1px solid var(--line);font-size:14px;color:var(--slate)">Sigue aprendiendo: <a href="guias.html" style="color:var(--orange);font-weight:600">todas las guías de licitaciones →</a></p>
   </div>
@@ -114,6 +149,9 @@
       <details><summary>¿Dónde encuentro el CPV de una licitación?</summary><p>En el anuncio de licitación y en el pliego, dentro del apartado de datos generales del expediente. Todas las plataformas de contratación (PLACSP y autonómicas) lo muestran junto al objeto del contrato.</p></details>
       <details><summary>¿Una licitación puede tener varios códigos CPV?</summary><p>Sí. Es habitual que un expediente lleve un CPV principal y varios adicionales. Por eso conviene buscar por familia de códigos y por palabras clave a la vez, para no perder licitaciones mal clasificadas.</p></details>
       <details><summary>¿El CPV es igual en toda Europa?</summary><p>Sí. El CPV (Common Procurement Vocabulary) es el vocabulario común de contratación pública de la Unión Europea, así que el mismo código sirve para buscar licitaciones en España y en el resto de países de la UE a través de TED.</p></details>
+          <details><summary>¿Qué pasa si no encuentro un CPV que describa exactamente mi actividad?</summary><p>Elige el que más se le aproxime a nivel de familia (primeros 5 o 6 dígitos) y combina la búsqueda con palabras clave del objeto. La administración tampoco encuentra siempre el código perfecto y es habitual que utilice el más genérico de la familia.</p></details>
+      <details><summary>¿Cuántos CPV adicionales puede llevar una licitación?</summary><p>Hasta 20 CPV adicionales además del principal, según el Reglamento 2195/2002 de la UE. En la práctica, los pliegos suelen listar entre 2 y 5.</p></details>
+      <details><summary>¿El CPV influye en la clasificación empresarial que necesito?</summary><p>Sí. La clasificación de contratista (grupo, subgrupo y categoría) está vinculada al tipo de servicio u obra, que a su vez se identifica por CPV. Si vas a acreditar solvencia por clasificación, revisa qué grupos y subgrupos cubren el CPV de la licitación.</p></details>
     </div>
   </div>
 </section>

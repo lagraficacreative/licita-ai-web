@@ -15,7 +15,7 @@
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/favicon.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Codis CPV: què són i com fer-los servir per trobar licitacions","description":"Què és el codi CPV, com s'estructura, els codis més habituals per sector i com fer-los servir per trobar totes les licitacions públiques de la teva activitat.","inLanguage":"ca-ES","author":{"@type":"Organization","name":"laLicita.ai"},"publisher":{"@type":"Organization","name":"laLicita.ai","logo":{"@type":"ImageObject","url":"https://lalicita.ai/logo.png"}},"mainEntityOfPage":"https://lalicita.ai/guia-cpv.html","datePublished":"2026-07-10","dateModified":"2026-07-10"}
+{"@context":"https://schema.org","@type":"Article","headline":"Codis CPV: què són i com fer-los servir per trobar licitacions","description":"Què és el codi CPV, com s'estructura, els codis més habituals per sector i com fer-los servir per trobar totes les licitacions públiques de la teva activitat.","inLanguage":"ca-ES","author":{"@type":"Organization","name":"Equipo laLicita.ai"},"publisher":{"@type":"Organization","name":"laLicita.ai","logo":{"@type":"ImageObject","url":"https://lalicita.ai/logo.png"}},"mainEntityOfPage":"https://lalicita.ai/guia-cpv.html","datePublished":"2026-07-10","dateModified":"2026-10-15"}
 </script>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="laLicita.ai">
@@ -67,6 +67,8 @@
   <div class="wrap prose" style="max-width:760px">
     <p>El <b>CPV</b> (<i>Common Procurement Vocabulary</i>, Vocabulari comú de contractes públics) és el sistema de codis amb què totes les administracions de la UE classifiquen l'objecte dels seus contractes. Cada licitació porta un o diversos CPV, i dominar-los és la manera més fiable de <b>no perdre't cap licitació del teu sector</b>.</p>
 
+    <p class="guide-meta" style="font-size:13px;color:var(--slate);margin:-4px 0 24px;padding-bottom:16px;border-bottom:1px solid var(--line)">Per <b>Equipo laLicita.ai</b> · Actualitzat el 15 d'octubre de 2026 · Lectura 7 min</p>
+
     <h3>Com s'estructura un CPV</h3>
     <p>És un codi de <b>8 dígits més un de control</b>, en arbre del més general al més específic:</p>
     <ul>
@@ -103,6 +105,39 @@
       <li>No revisar el CPV en acreditar l'experiència: els certificats de <a href="guia-solvencia.html">solvència tècnica</a> han de correspondre a treballs del mateix tipus.</li>
     </ul>
 
+    
+    <h3>Com triar el CPV principal correcte</h3>
+    <p>Triar malament el CPV és una de les causes principals que una licitació passi desapercebuda o que acreditar l'experiència després es complique. Per a una pime amb una activitat clara, el mètode que funciona millor és aquest:</p>
+    <ol>
+      <li><b>Defineix l'<i>objecte</i> en una frase</b>. No "disseny" sinó "disseny gràfic editorial per a publicacions impreses". Un CPV descriu un objecte, no una capacitat.</li>
+      <li><b>Cerca aquest objecte al cercador oficial del CPV</b>. El sistema és a SIMAP (<i>ted.europa.eu/udl?uri=TED:NOTICE:SIMAP</i>) amb nomenclatura completa. Introdueix la paraula més específica que puguis.</li>
+      <li><b>Baixa al nivell de vuit xifres</b>. Els CPV tenen fins a 9 dígits; com més precís, menys soroll però també menys cobertura. Per començar, el nivell de 8 xifres sol ser l'equilibri correcte.</li>
+      <li><b>Comprova-ho amb dos exemples reals</b>. Cerca aquest codi a PLACSP i mira si el que apareix és coherent amb la teva activitat. Si tres de cada quatre resultats són irrellevants, el codi no és el teu.</li>
+      <li><b>Afegeix els CPV veïns com a secundaris</b>. A la cerca d'alertes, no a la teva activitat declarada. Un dissenyador editorial pot voler vigilar també 79822 (disseny gràfic), 79800 (arts gràfiques) i 79823 (impressió).</li>
+    </ol>
+
+    <h3>Els nou nivells del CPV i quan fer servir cadascun</h3>
+    <p>L'estructura del vocabulari comú és jeràrquica. Un CPV complet (ex. <b>79822500-7</b>) es descompon en:</p>
+    <ul>
+      <li><b>Divisió</b> (dues primeres xifres, p. ex. 79): <i>Serveis per a empreses</i>. Rarament útil per si sola — massa genèrica.</li>
+      <li><b>Grup</b> (tres xifres, 798): <i>Serveis d'edició, impressió i relacionats</i>.</li>
+      <li><b>Classe</b> (quatre xifres, 7982): <i>Serveis de disseny</i>.</li>
+      <li><b>Categoria</b> (cinc a vuit xifres, 798225 → 79822500): nivell més precís. És el nivell estàndard als plecs.</li>
+      <li><b>Dígit de control</b> (últim, després del guió): calculat automàticament, no es fa servir per cercar.</li>
+    </ul>
+    <p>A les cerques per alertes convé filtrar pels primers 5 o 6 dígits, no pel codi complet: així cobreixes variants que l'administració hagi codificat lleugerament diferent per al mateix tipus de contracte.</p>
+
+    <h3>CPV complementaris: quan afegir-los i com</h3>
+    <p>La LCSP permet que un expedient porti un CPV principal i fins a <b>vint CPV addicionals</b>. Això és útil quan l'objecte combina diversos serveis: per exemple, una campanya de comunicació institucional inclou disseny gràfic (79822), publicitat (79340), producció audiovisual (92111) i relacions públiques (79416). L'administració pot codificar bé o malament aquesta combinació, i per això, quan configures alertes, el recomanable és:</p>
+    <ul>
+      <li>Afegir amb operador OR entre 3 i 6 codis veïns al teu principal.</li>
+      <li>No incloure CPV massa generalistes (nivell de dues o tres xifres) tret que la teva capacitat abraci tota aquesta família.</li>
+      <li>Revisar la configuració cada sis mesos: l'activitat real de l'empresa evoluciona i la codificació de l'administració també.</li>
+    </ul>
+
+    <h3>Què passa quan el plec fa servir un CPV equivocat</h3>
+    <p>No és estrany trobar expedients mal classificats. L'objecte del contracte (el que posa al PCAP) mana sobre el CPV: pots presentar-te encara que el codi estigui mal triat, sempre que l'activitat descrita encaixi amb la teva. Per evitar perdre aquestes licitacions, en lloc de cercar només per CPV combina'l amb <b>paraules clau a l'objecte</b> ("campanya", "identitat", "memòria tècnica", noms de sectors). Això duplica el teu abast i és, a la pràctica, com funcionen els cercadors especialitzats.</p>
+
     <p>A <a href="producto.html" style="color:var(--orange);font-weight:600">laLicita.ai</a> no cal que et sàpigues els codis: descrius la teva activitat amb les teves paraules i la cerca amb IA la tradueix als CPV i als filtres adequats, amb alertes diàries per correu electrònic.</p>
     <p style="margin-top:34px;padding-top:20px;border-top:1px solid var(--line);font-size:14px;color:var(--slate)">Continua aprenent: <a href="guias.html" style="color:var(--orange);font-weight:600">totes les guies de licitacions →</a></p>
   </div>
@@ -114,6 +149,9 @@
       <details><summary>On trobo el CPV d'una licitació?</summary><p>A l'anunci de licitació i al plec, dins de l'apartat de dades generals de l'expedient. Totes les plataformes de contractació (PLACSP i autonòmiques) el mostren al costat de l'objecte del contracte.</p></details>
       <details><summary>Una licitació pot tenir diversos codis CPV?</summary><p>Sí. És habitual que un expedient porti un CPV principal i diversos d'addicionals. Per això convé cercar alhora per família de codis i per paraules clau, per no perdre licitacions mal classificades.</p></details>
       <details><summary>El CPV és igual a tot Europa?</summary><p>Sí. El CPV (Common Procurement Vocabulary) és el vocabulari comú de contractes públics de la Unió Europea, de manera que el mateix codi serveix per cercar licitacions a Espanya i a la resta de països de la UE a través de TED.</p></details>
+          <details><summary>Què passa si no trobo un CPV que descrigui exactament la meva activitat?</summary><p>Tria el que més s'hi aproximi a nivell de família (primers 5 o 6 dígits) i combina la cerca amb paraules clau de l'objecte. L'administració tampoc troba sempre el codi perfecte i és habitual que faci servir el més genèric de la família.</p></details>
+      <details><summary>Quants CPV addicionals pot portar una licitació?</summary><p>Fins a 20 CPV addicionals a més del principal, segons el Reglament 2195/2002 de la UE. A la pràctica, els plecs solen llistar entre 2 i 5.</p></details>
+      <details><summary>El CPV influeix en la classificació empresarial que necessito?</summary><p>Sí. La classificació de contractista (grup, subgrup i categoria) està vinculada al tipus de servei o obra, que al seu torn s'identifica per CPV. Si vas a acreditar solvència per classificació, revisa quins grups i subgrups cobreixen el CPV de la licitació.</p></details>
     </div>
   </div>
 </section>
