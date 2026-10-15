@@ -12,7 +12,7 @@
 (function () {
   // ⬇️⬇️  PEGA AQUÍ TUS IDs REALES  ⬇️⬇️
   var GA4_ID = 'G-GS2DNSVCNW';   // Google Analytics 4 · Web comercial
-  var ADS_ID = '';   // ← vacío mientras preparamos la nueva cuenta de Google Ads   // ej.: 'AW-XXXXXXXXX'   (Google Ads)
+  var ADS_ID = 'AW-18514982450';   // Google Ads · laLicita cuenta nueva (oct 2026)
   // ⬆️⬆️  ——————————————————————————  ⬆️⬆️
 
   var hasTags = !!(GA4_ID || ADS_ID);
@@ -67,13 +67,13 @@
     try { gtag('event', 'conversion', payload); } catch (_) {}
   }
   // Registro completado (crear la cuenta)
-  window.trackSignup    = function () { _fireAds('PldmCP-d0p0dEOixic8D'); };
+  window.trackSignup    = function () { _fireAds('kTGMCPOv9Z0dELLs0PxE'); };
   // Suscripción pagada (confirmación Stripe). value = importe real €
-  window.trackPurchase  = function (v, cur) { _fireAds('873lCIKe0p0dEOixic8D', { value: (+v || 0), currency: cur || 'EUR' }); };
+  window.trackPurchase  = function (v, cur) { _fireAds('CIlKCPav9Z0dELLs0PxE', { value: (+v || 0), currency: cur || 'EUR' }); };
   // Demo o contacto enviado
-  window.trackLead      = function () { _fireAds('K2X3CMPB050dEOixic8D'); };
+  window.trackLead      = function () { _fireAds('yh4eCO6V_J0dELLs0PxE'); };
   // Clic en WhatsApp
-  window.trackWhatsapp  = function () { _fireAds('9fhcCMbB050dEOixic8D'); };
+  window.trackWhatsapp  = function () { _fireAds('BJvcCPGV_J0dELLs0PxE'); };
 
   // Auto-wire: cualquier link wa.me (o whatsapp.com) dispara trackWhatsapp al clic.
   function _wireWhatsapp() {
