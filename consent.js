@@ -12,7 +12,7 @@
 (function () {
   // ⬇️⬇️  PEGA AQUÍ TUS IDs REALES  ⬇️⬇️
   var GA4_ID = 'G-GS2DNSVCNW';   // Google Analytics 4 · Web comercial
-  var ADS_ID = 'AW-971135208';   // ej.: 'AW-XXXXXXXXX'   (Google Ads)
+  var ADS_ID = '';   // ← vacío mientras preparamos la nueva cuenta de Google Ads   // ej.: 'AW-XXXXXXXXX'   (Google Ads)
   // ⬆️⬆️  ——————————————————————————  ⬆️⬆️
 
   var hasTags = !!(GA4_ID || ADS_ID);
