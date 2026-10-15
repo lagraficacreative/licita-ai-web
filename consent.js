@@ -56,6 +56,41 @@
   }
   function save(v) { try { localStorage.setItem(STORE_KEY, v); } catch (_) {} }
 
+    // ──── _LAI_CONV_HELPERS_ ────────────────────────────────────────────────
+  // Helpers de conversión Google Ads. Cada uno dispara el evento solo si
+  // ya hay consentimiento (ads granted). Si no hay consentimiento el evento
+  // igualmente se encola en dataLayer (Consent Mode lo gestiona).
+  function _fireAds(label, extra) {
+    if (!ADS_ID) return;
+    var payload = { send_to: ADS_ID + '/' + label };
+    if (extra && typeof extra === 'object') for (var k in extra) payload[k] = extra[k];
+    try { gtag('event', 'conversion', payload); } catch (_) {}
+  }
+  // Registro completado (crear la cuenta)
+  window.trackSignup    = function () { _fireAds('PldmCP-d0p0dEOixic8D'); };
+  // Suscripción pagada (confirmación Stripe). value = importe real €
+  window.trackPurchase  = function (v, cur) { _fireAds('873lCIKe0p0dEOixic8D', { value: (+v || 0), currency: cur || 'EUR' }); };
+  // Demo o contacto enviado
+  window.trackLead      = function () { _fireAds('K2X3CMPB050dEOixic8D'); };
+  // Clic en WhatsApp
+  window.trackWhatsapp  = function () { _fireAds('9fhcCMbB050dEOixic8D'); };
+
+  // Auto-wire: cualquier link wa.me (o whatsapp.com) dispara trackWhatsapp al clic.
+  function _wireWhatsapp() {
+    document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"]').forEach(function (a) {
+      if (a._laiWa) return; a._laiWa = 1;
+      a.addEventListener('click', function () { try { window.trackWhatsapp(); } catch (_) {} });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', _wireWhatsapp);
+  else _wireWhatsapp();
+  // Re-escanear cuando la página inyecte links después (SPA parciales)
+  try {
+    var mo = new MutationObserver(function () { _wireWhatsapp(); });
+    mo.observe(document.documentElement, { childList: true, subtree: true });
+  } catch (_) {}
+  // ──── /_LAI_CONV_HELPERS_ ───────────────────────────────────────────────
+
   // Si ya hay decisión previa, aplicarla sin volver a mostrar el banner.
   var prev = null;
   try { prev = localStorage.getItem(STORE_KEY); } catch (_) {}
@@ -94,40 +129,5 @@
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', showBanner);
   else showBanner();
-
-  // ──── _LAI_CONV_HELPERS_ ────────────────────────────────────────────────
-  // Helpers de conversión Google Ads. Cada uno dispara el evento solo si
-  // ya hay consentimiento (ads granted). Si no hay consentimiento el evento
-  // igualmente se encola en dataLayer (Consent Mode lo gestiona).
-  function _fireAds(label, extra) {
-    if (!ADS_ID) return;
-    var payload = { send_to: ADS_ID + '/' + label };
-    if (extra && typeof extra === 'object') for (var k in extra) payload[k] = extra[k];
-    try { gtag('event', 'conversion', payload); } catch (_) {}
-  }
-  // Registro completado (crear la cuenta)
-  window.trackSignup    = function () { _fireAds('PldmCP-d0p0dEOixic8D'); };
-  // Suscripción pagada (confirmación Stripe). value = importe real €
-  window.trackPurchase  = function (v, cur) { _fireAds('873lCIKe0p0dEOixic8D', { value: (+v || 0), currency: cur || 'EUR' }); };
-  // Demo o contacto enviado
-  window.trackLead      = function () { _fireAds('K2X3CMPB050dEOixic8D'); };
-  // Clic en WhatsApp
-  window.trackWhatsapp  = function () { _fireAds('9fhcCMbB050dEOixic8D'); };
-
-  // Auto-wire: cualquier link wa.me (o whatsapp.com) dispara trackWhatsapp al clic.
-  function _wireWhatsapp() {
-    document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"]').forEach(function (a) {
-      if (a._laiWa) return; a._laiWa = 1;
-      a.addEventListener('click', function () { try { window.trackWhatsapp(); } catch (_) {} });
-    });
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', _wireWhatsapp);
-  else _wireWhatsapp();
-  // Re-escanear cuando la página inyecte links después (SPA parciales)
-  try {
-    var mo = new MutationObserver(function () { _wireWhatsapp(); });
-    mo.observe(document.documentElement, { childList: true, subtree: true });
-  } catch (_) {}
-  // ──── /_LAI_CONV_HELPERS_ ───────────────────────────────────────────────
 
 })();
