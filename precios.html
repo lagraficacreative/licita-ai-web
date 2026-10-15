@@ -23,14 +23,18 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="dns-prefetch" href="https://app.lalicita.ai">
+<link rel="canonical" href="https://lalicita.ai/precios.html">
+<link rel="alternate" hreflang="es-ES" href="https://lalicita.ai/precios.html">
+<link rel="alternate" hreflang="ca" href="https://lalicita.ai/ca/precios.html">
+<link rel="alternate" hreflang="x-default" href="https://lalicita.ai/precios.html">
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
-    <a href="index.html" class="logo"><img src="logo.png" class="logo-img" alt="laLicita.ai — Gestión de licitaciones públicas" loading="lazy" decoding="async"></a>
+    <a href="/" class="logo"><img src="logo.png" class="logo-img" alt="laLicita.ai — Gestión de licitaciones públicas" loading="lazy" decoding="async"></a>
     <nav class="nav-links">
-      <a href="index.html">Inicio</a>
+      <a href="/">Inicio</a>
       <a href="producto.html">Producto</a>
       <a href="precios.html" class="active">Precios</a>
       <a href="guias.html">Guías</a>
@@ -66,26 +70,25 @@
       <div class="plan">
         <h3>Starter</h3>
         <p class="who">Para autónomos y pymes que empiezan a licitar de forma organizada.</p>
-        <div class="price"><span class="amt" data-m="25 €" data-a="250 €">250 €</span><span class="unit">/año</span></div>
+        <div class="price"><span class="amt" data-m="25 €" data-a="250 €">25 €</span><span class="unit">/mes</span></div>
         <div style="font-size:12.5px;color:var(--slate);margin:-4px 0 2px">+ IVA (21%)</div>
-        <div class="per"><span class="bill" data-m="1 usuario · facturación mensual" data-a="1 usuario · facturación anual (250 €/año)">1 usuario · facturación anual (250 €/año)</span></div>
+        <div class="per"><span class="bill" data-m="1 usuario · facturación mensual" data-a="1 usuario · facturación anual (250 €/año)">1 usuario · facturación mensual</span></div>
         <ul>
           <li>Buscador de licitaciones ilimitado</li>
           <li>Tablero kanban y agenda</li>
           <li>Checklist y exportación a Excel</li>
           <li>5 acciones de IA al mes</li>
           <li class="off">Generación de memorias técnicas</li>
-          <li class="off">Multiusuario</li>
-        </ul>
+          </ul>
         <a href="https://app.lalicita.ai/registro.html" class="btn btn-ghost" data-plan="starter">Empezar gratis</a>
       </div>
       <div class="plan pop">
         <span class="badge">El más elegido</span>
         <h3>Pro</h3>
         <p class="who">Para empresas que se presentan a concursos de forma habitual.</p>
-        <div class="price"><span class="amt" data-m="89 €" data-a="890 €">890 €</span><span class="unit">/año</span></div>
+        <div class="price"><span class="amt" data-m="89 €" data-a="890 €">89 €</span><span class="unit">/mes</span></div>
         <div style="font-size:12.5px;color:var(--slate);margin:-4px 0 2px">+ IVA (21%)</div>
-        <div class="per"><span class="bill" data-m="Hasta 3 usuarios · facturación mensual" data-a="Hasta 3 usuarios · facturación anual (890 €/año)">Hasta 3 usuarios · facturación anual (890 €/año)</span></div>
+        <div class="per"><span class="bill" data-m="Hasta 3 usuarios · facturación mensual" data-a="Hasta 3 usuarios · facturación anual (890 €/año)">Hasta 3 usuarios · facturación mensual</span></div>
         <ul>
           <li>Todo lo de Starter</li>
           <li><b>Hasta 50 acciones de IA al mes</b></li>
@@ -99,9 +102,9 @@
       <div class="plan">
         <h3>Agencia</h3>
         <p class="who">Para equipos y agencias con alto volumen de licitaciones.</p>
-        <div class="price"><span class="amt" data-m="279 €" data-a="2.790 €">2.790 €</span><span class="unit">/año</span></div>
+        <div class="price"><span class="amt" data-m="279 €" data-a="2.790 €">279 €</span><span class="unit">/mes</span></div>
         <div style="font-size:12.5px;color:var(--slate);margin:-4px 0 2px">+ IVA (21%)</div>
-        <div class="per"><span class="bill" data-m="Hasta 10 usuarios · facturación mensual" data-a="Hasta 10 usuarios · facturación anual (2.790 €/año)">Hasta 10 usuarios · facturación anual (2.790 €/año)</span></div>
+        <div class="per"><span class="bill" data-m="Hasta 10 usuarios · facturación mensual" data-a="Hasta 10 usuarios · facturación anual (2.790 €/año)">Hasta 10 usuarios · facturación mensual</span></div>
         <ul>
           <li>Todo lo de Pro</li>
           <li>Hasta 10 usuarios</li>
@@ -218,7 +221,7 @@
     var lblM = document.getElementById('lblMensual');
     var lblA = document.getElementById('lblAnual');
     if(!sw) return;
-    var anual = true;   // anual por defecto
+    var anual = false;   // anual por defecto
     function apply(){
       sw.setAttribute('aria-checked', anual ? 'true' : 'false');
       sw.style.background = anual ? '#E8622A' : '#d8dbe4';

@@ -20,14 +20,18 @@
 <meta name="twitter:title" content="Solicita una demo gratuita | laLicita.ai">
 <meta name="twitter:description" content="Solicita una demo gratuita de laLicita.ai. Te enseñamos a buscar, analizar y ganar más licitaciones públicas con IA.">
 <meta name="twitter:image" content="https://lalicita.ai/og-image.png">
+<link rel="canonical" href="https://lalicita.ai/contacto.html">
+<link rel="alternate" hreflang="es-ES" href="https://lalicita.ai/contacto.html">
+<link rel="alternate" hreflang="ca" href="https://lalicita.ai/ca/contacto.html">
+<link rel="alternate" hreflang="x-default" href="https://lalicita.ai/contacto.html">
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
-    <a href="index.html" class="logo"><img src="logo.png" class="logo-img" alt="laLicita.ai — Gestión de licitaciones públicas"></a>
+    <a href="/" class="logo"><img src="logo.png" class="logo-img" alt="laLicita.ai — Gestión de licitaciones públicas"></a>
     <nav class="nav-links">
-      <a href="index.html">Inicio</a>
+      <a href="/">Inicio</a>
       <a href="producto.html">Producto</a>
       <a href="precios.html">Precios</a>
       <a href="guias.html">Guías</a>
@@ -147,7 +151,7 @@
     })
     .then(function(r){ return r.json(); })
     .then(function(d){
-      if (d && d.ok) {
+      if (d && d.ok) { /* _LAI_TRACK_LEAD_ */ try { if (window.trackLead) window.trackLead(); } catch(_) {}
         document.getElementById('demoForm').reset();
         show('✓ ¡Solicitud enviada! Te contactaremos muy pronto.', '#1faa59');
       } else {
